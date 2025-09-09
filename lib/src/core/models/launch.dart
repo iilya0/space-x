@@ -5,6 +5,7 @@ class Launch {
   final String? details;
   final String? missionPatchSmall;
   final String? missionPatchLarge;
+  final String? wikipedia;
 
   Launch({
     required this.missionName,
@@ -13,6 +14,7 @@ class Launch {
     required this.details,
     required this.missionPatchSmall,
     required this.missionPatchLarge,
+    required this.wikipedia,
   });
 
   factory Launch.fromJson(Map<String, dynamic> json) {
@@ -38,6 +40,7 @@ class Launch {
       missionPatchLarge: links == null
           ? null
           : links['mission_patch'] as String?,
+      wikipedia: links == null ? null : links['wikipedia'] as String?,
     );
   }
 }
