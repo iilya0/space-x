@@ -7,6 +7,6 @@ class ApiException implements Exception {
 
   @override
   String toString() {
-    return '$key)';
+    return key;
   }
 }
