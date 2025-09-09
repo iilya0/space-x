@@ -8,10 +8,7 @@ import 'package:space_x/src/features/home/presentation/bloc/home_event.dart';
 import 'package:space_x/src/features/home/presentation/bloc/home_state.dart';
 
 class RocketSlider extends StatefulWidget {
-  const RocketSlider({
-    required this.rockets,
-    super.key,
-  });
+  const RocketSlider({required this.rockets, super.key});
 
   final List<Rocket> rockets;
 
@@ -80,7 +77,7 @@ class _RocketSliderState extends State<RocketSlider> {
                       boxShadow: isSelected
                           ? [
                               BoxShadow(
-                                color: AppColors.black.withOpacity(0.3),
+                                color: AppColors.darkGray,
                                 blurRadius: 8,
                                 offset: const Offset(0, 4),
                               ),
@@ -135,13 +132,14 @@ class _RocketSliderState extends State<RocketSlider> {
                 widget.rockets.length,
                 (index) => Container(
                   margin: const EdgeInsets.symmetric(horizontal: 4),
-                  width: 8,
-                  height: 8,
+                  width: 10,
+                  height: 10,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
+                    border: Border.all(color: AppColors.white, width: 1),
                     color: index == currentIndex
                         ? AppColors.white
-                        : AppColors.white.withOpacity(0.3),
+                        : AppColors.black,
                   ),
                 ),
               ),

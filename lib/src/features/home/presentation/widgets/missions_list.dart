@@ -118,9 +118,13 @@ class MissionsList extends StatelessWidget {
       if (await _tryLaunch(uri, LaunchMode.inAppBrowserView)) return;
       if (await _tryLaunch(uri, LaunchMode.platformDefault)) return;
 
-      _showSnackBar(context, 'Could not open Wikipedia page');
+      if (context.mounted) {
+        _showSnackBar(context, 'Could not open Wikipedia page');
+      }
     } catch (e) {
-      _showSnackBar(context, 'Error opening Wikipedia: $e');
+      if (context.mounted) {
+        _showSnackBar(context, 'Error opening Wikipedia: $e');
+      }
     }
   }
 
