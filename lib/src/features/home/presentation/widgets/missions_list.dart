@@ -126,11 +126,7 @@ class MissionsList extends StatelessWidget {
 
   Uri _normalizeUrl(String url) {
     final normalized = url.trim();
-    return Uri.parse(
-      normalized.startsWith('http://') || normalized.startsWith('https://')
-          ? normalized
-          : 'https://$normalized',
-    );
+    return Uri.parse(normalized);
   }
 
   Future<bool> _tryLaunch(Uri uri, LaunchMode mode) async {
